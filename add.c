@@ -9,7 +9,7 @@
 **
 */
 
-//#include <stdio.h>
+//#include <stdio.h> //	debug code
 
 int add( int a, int b )
 {
@@ -29,3 +29,4 @@ int add( int a, int b )
 	printf("%d\n", my_add(a_2, b_2));
 	printf("%d\n", my_add(a_3, b_3));
 }*/
+//	debug code

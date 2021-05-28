@@ -8,16 +8,14 @@
 **
 */
 
-//#include <stdio.h>
+//#include <stdio.h> //	debug code
 
 int strlen(char* s)
 {
 	int i = 0;
 
 	while ( s[i] != 0 )
-	{
 		i++;
-	}
 	return i;
 }
 
@@ -31,3 +29,4 @@ int strlen(char* s)
 	printf("%d\n", my_strlen(s_3));
 	return 0;
 }*/
+//	debug code

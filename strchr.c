@@ -10,7 +10,7 @@
 */
 
 #include <stddef.h>
-//#include <stdio.h>
+//#include <stdio.h> //	debug code
 
 char* strchr(char* s, char c)
 {
@@ -19,9 +19,7 @@ char* strchr(char* s, char c)
 	while ( s[i] != c )
 	{
 		if ( s[i] == 0 )
-		{
 			return NULL;
-		}
 		i++;
 	}
 	return (char*) &s[i];
@@ -40,3 +38,4 @@ char* strchr(char* s, char c)
 	printf("%s\n", my_strchr(s_2, c_2));
 	printf("%s\n", my_strchr(s_3, c_3));
 }*/
+//	debug code

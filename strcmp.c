@@ -9,16 +9,14 @@
 **
 */
 
-//#include <stdio.h>
+//#include <stdio.h> //	debug code
 
 int strcmp(char* s_1, char* s_2)
 {
 	int i = 0;
 
-	while ( s_1[i] == s_2[i] && s_1[i] != 0 && s_2[i] != 0 ) // Couldn't I also just increment the position of a pointer? It would spare me from needing an index number.
-	{
+	while ( s_1[i] == s_2[i] && s_1[i] != 0 && s_2[i] != 0 )
 		i++;
-	}
 	return ( s_1[i] - s_2[i] );
 }
 
@@ -32,3 +30,4 @@ Example of main
 	printf("my_strcmp -> %d\n", my_strcmp(s1, s2));
 	return 0;
 }*/
+//	debug code

@@ -11,26 +11,20 @@
 
 #include <string.h>
 #include <stddef.h>
-//#include <stdio.h>
+//#include <stdio.h> //	debug code
 
 char* strstr(char* s_1, char* s_2)
 {
-	int n_s_1 = strlen(s_1);
-	int n_s_2 = strlen(s_2);
-//	int i = 0;
-//	int j = 0;
+	int l_s_1 = strlen(s_1);
+	int l_s_2 = strlen(s_2);
 
-	if ( !n_s_2 )
-	{
+	if ( !l_s_2 )
 		return (char*) s_1;
-	}
-	while ( n_s_1 >= n_s_2 )
+	while ( l_s_1 >= l_s_2 )
 	{
-		n_s_1--;
-		if ( !memcmp(s_1, s_2, n_s_2) )
-		{
+		l_s_1--;
+		if ( !memcmp(s_1, s_2, l_s_2) )
 			return (char*) s_1;
-		}
 		s_1++;
 	}
 	return NULL;
@@ -58,3 +52,4 @@ char* strstr(char* s_1, char* s_2)
 	printf("%s\n", my_strstr(s_5_1, s_5_2));
 	printf("%s\n", my_strstr(s_6_1, s_6_2));
 }*/
+//	debug code

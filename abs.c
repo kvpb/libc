@@ -8,11 +8,11 @@
 **
 */
 
-//#include <stdio.h>
+//#include <stdio.h> //	debug code
 
 int abs( int x )
 {
-	return x < 0 ? -x : x; //( ( x )^2 )^( 1 / 2 ); // What? It does not work?
+	return ( ( x < 0 ) ? -( x ) : x );
 }
 
 /*int main()
@@ -26,3 +26,4 @@ int abs( int x )
 	printf("%d\n", my_abs(3));
 	return 0;
 }*/
+//	debug code

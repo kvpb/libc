@@ -50,3 +50,4 @@ int main() {
 	printf("my_strncpy -> %s\n", my_strncpy(dst5, src5, 10000));
 	return 0;
 }*/
+//	debug code

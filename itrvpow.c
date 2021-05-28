@@ -9,19 +9,17 @@
 **
 */
 
+//#include <stdio.h> //	debug code
+
 int pow( int b, int n )
 {
 	int x = 1;
 	int i = 0;
 
 	if ( n == 0 )
-	{
 		return 1;
-	}
 	else if ( n == 1 )
-	{
 		return n;
-	}
 	while ( i < n )
 	{
 		x = x * b;
@@ -78,3 +76,4 @@ int pow( int b, int n )
 	printf("%d\n", my_iterative_pow(10, 3));
 	return 0;
 }*/
+//	debug code

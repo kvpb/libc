@@ -10,14 +10,14 @@
 */
 
 #include <stdlib.h>
-//#include <stdio.h>
+//#include <stdio.h> //	debug code
 
-int* range(int a, int b)
+int* range( int a, int b )
 {
     int i = 0;
     int j = a;
     int k = b - a;
-    int* A = malloc( k );
+    int* A = malloc(k);
 
     while ( i <= k && a <= j && j <= b )
     {
@@ -55,3 +55,4 @@ int* range(int a, int b)
     for ( i = 0; i < k_2; i++ )
         printf("%d\n", A_2[i]);
 }*/
+//	debug code

@@ -17,9 +17,7 @@ char* strrchr(char* s, char c)
 	while (s[i] != 0)
 	{
 		if (s[i] == c)
-		{
 			p = (char*) &s[i];
-		}
 		i++;
 	}
 	return p;

@@ -25,3 +25,12 @@ void putstr(char* s)
 		i++;
 	}
 }
+
+/*int main()
+{
+	char* s = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+	putstr(s);
+	putstr("\n");
+}*/
+//	debug code

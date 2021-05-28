@@ -9,7 +9,7 @@
 */
 
 #include <string.h>
-/*#include <stdio.h>*/
+//#include <stdio.h> //	debug code
 
 char* strrev(char* s)
 {
@@ -39,3 +39,4 @@ Example of main
 	printf("Reverse -> %s\n", reverse_string(my_str));
 	return 0;
 }*/
+//	debug code
