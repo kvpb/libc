@@ -26,54 +26,51 @@
 //// WISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
 */// OF THE POSSIBILITY OF SUCH DAMAGE.
 
-//#include <stdarg.h> // https://en.wikipedia.org/wiki/Variadic_function#In_C
-//#include <stdio.h> //	debug code
+#include <stdarg.h>
+#include <stdio.h> //	debug code
 
-/*int min( int a, int b )
+int itrvgcd( int a, int b )
 {
-	return ( ( a <= b ) ? a : b );
-}*/ // KVPB's MIN
-//	debug code
+	int q;
+	int r;
+	// a = bq + r
 
-/*int max( int a, int b )
-{
-	return ( ( a >= b ) ? a : b );
-}*/ // KVPB's MAX
-//	debug code
+	while ( b > 0 )
+	{
+		q = a / b;
+		r = a - q * b; //a % b;
+		a = b;
+		b = r;
+	}
+	return a;
+} // KVPB's ITRVGCD
 
-int gcd( int a, int b ) // int gcd( int c, ... )
+int rcsvgcd( int a, int b )
 {
-	/*if ( b == 0 ) //if ( a == 0 || b == 0 )
-		return a; //	return -1;
-	if ( a % b != 0 )
-		return gcd( b, a % b ); //return gcd( min( a, b ), max( a, b ) % min( a, b ) );*/
-	return ( ( b == 0 ) ? a : gcd( b, a % b ) );
+	return ( ( b == 0 ) ? a : rcsvgcd( b, a % b ) );
 } // KVPB's RCSVGCD
 
-/*int abs( int x )
+/*int gcd( int a, int b, ... ) //int gcd( int a, int b )
 {
-	return ( ( x < 0 ) ? -( x ) : x );
-}*/ // KVPB's ABS
-//	debug code
+	va_list A_p;
 
-/*int lcm( int a, int b ) //int lcm( int c, ... )
+	printf("a = %d\tb = %d\tA_p = %p\n", a, b, A_p); //	debug code
+	va_start(A_p, b);
+	//va_arg(A_p, int);
+	//return ( ( b == 0 ) ? a : gcd( va_arg(A_p, int), a % b ) ); //return ( ( b == 0 ) ? a : gcd( b, a % b ) );
+	va_end(A_p);
+}*/ // KVPB's RCSVGCD
+
+int gcd( int a, int b, ... )
 {
-	int L;
+	va_list A_p;
 
-	
-	return L;
-} // KVPB's LCM
-//	debug code
+	va_start(A_p, b);
+	return rcsvgcd( rcsvgcd( a, b ), va_arg(A_p, int) );
+	va_end(A_p);
+} // KVPB's GCD
 
-int gcd( int a, int b )
-{
-	//int d;
-
-	
-	//return ( abs( a * b ) / lcm( a, b ) );
-} KVPB's GCD*/
-
-/*int main()
+int main()
 {
 	int a_0 = 0;
 	int b_0 = 0;
@@ -91,17 +88,38 @@ int gcd( int a, int b )
 	int b_6 = 72;
 	int a_7 = 42;
 	int b_7 = 777;
+	int a = 3840;
+	int b = 2880;
+	int c = 5120;
+	int d = 2880;
+	int f = gcd( a, b );
+	int g = gcd( c, d );
+	int h = gcd( f, g );
+	int y = gcd( a, b, c, d, f, g, h );
 
-	printf("a = %d,\tb = %d\tgcd( a, b ) = %d\n", a_0, b_0, gcd( a_0, b_0 ));
-	printf("a = %d,\tb = %d\tgcd( a, b ) = %d\n", a_1, b_1, gcd( a_1, b_1 ));
-	printf("a = %d,\tb = %d\tgcd( a, b ) = %d\n", a_2, b_2, gcd( a_2, b_2 ));
-	printf("a = %d,\tb = %d\tgcd( a, b ) = %d\n", a_3, b_3, gcd( a_3, b_3 ));
-	printf("a = %d,\tb = %d\tgcd( a, b ) = %d\n", a_4, b_4, gcd( a_4, b_4 ));
-	printf("a = %d,\tb = %d\tgcd( a, b ) = %d\n", a_5, b_5, gcd( a_5, b_5 ));
-	printf("a = %d,\tb = %d\tgcd( a, b ) = %d\n", a_6, b_6, gcd( a_6, b_6 ));
-	printf("a = %d,\tb = %d\tgcd( a, b ) = %d\n", a_7, b_7, gcd( a_7, b_7 ));
+	printf("a = %d,\t\tb = %d,\t\tgcd( a, b ) = %d;\n", a_0, b_0, rcsvgcd( a_0, b_0 ));
+	printf("a = %d,\t\tb = %d,\t\tgcd( a, b ) = %d;\n", a_1, b_1, rcsvgcd( a_1, b_1 ));
+	printf("a = %d,\t\tb = %d,\t\tgcd( a, b ) = %d;\n", a_2, b_2, rcsvgcd( a_2, b_2 ));
+	printf("a = %d,\t\tb = %d,\t\tgcd( a, b ) = %d;\n", a_3, b_3, rcsvgcd( a_3, b_3 ));
+	printf("a = %d,\t\tb = %d,\t\tgcd( a, b ) = %d;\n", a_4, b_4, rcsvgcd( a_4, b_4 ));
+	printf("a = %d,\t\tb = %d,\t\tgcd( a, b ) = %d;\n", a_5, b_5, rcsvgcd( a_5, b_5 ));
+	printf("a = %d,\t\tb = %d,\t\tgcd( a, b ) = %d;\n", a_6, b_6, rcsvgcd( a_6, b_6 ));
+	printf("a = %d,\t\tb = %d,\tgcd( a, b ) = %d;\n", a_7, b_7, rcsvgcd( a_7, b_7 ));
+	printf("gcd( 4, 40, 404 )\t\t= %d;\n", gcd( 4, 40, 404 ));
+	printf("gcd( 7, 42, 777, 7042 )\t\t= %d;\n", gcd( 7, 42, 777, 7042 ));
+	printf("gcd( 6, 48, 192, 256, 2048 )\t= %d;\n", gcd( 6, 48, 192, 256, 2048 ));
+	printf("a = %d,\tb = %d,\tgcd( a, b ) = %d;\n", a, b, itrvgcd( a, b ));
+	printf("c = %d,\td = %d,\tgcd( c, d ) = %d;\n", c, d, itrvgcd( c, d ));
+	printf("a = %d,\t\tb = %d,\t\tf( a, b ) = %d,\na / f( a, b ) = %d,\tb / f( a, b ) = %d,\na / b = %d / %d;\n", a, b, f, ( a / f ), ( b / f ), a / f, b / f);
+	printf("c = %d,\t\td = %d,\t\tf( c, d ) = %d,\nc / f( c, d ) = %d,\td / f( c, d ) = %d,\nc / d = %d / %d;\n", c, d, g, ( c / g ), ( d / g ), c / g, d / g);
+	printf("a = %d,\tb = %d,\tc = %d,\td = %d,\nf( a, b ) = %d,\t\tg( c, d ) = %d,\nh( f( a, b ), g( c, d ) ) = %d,\ny( a, b, c, d, f( a, b ), g( c, d ), h( f( a, b ), g( c, d ) ) ) = %d;\n", a, b, c, d, f, g, h, y);
+	printf("with 2 parameters:\t%d\n", gcd( 900, 600 ));
+	printf("with 3 parameters:\t%d\n", gcd( 900, 600, 90 ));
+	printf("with 4 parameters:\t%d\n", gcd( 900, 600, 90, 60 ));
+	printf("with 5 parameters:\t%d\n", gcd( 900, 600, 90, 60, 9 ));
+	printf("with 6 parameters:\t%d\n", gcd( 900, 600, 90, 60, 9, 6 ));
 	return 0;
-}*/ //	debug code
+} //	debug code
 
 /*//	gcd.c
 ////	GCD
@@ -112,28 +130,12 @@ int gcd( int a, int b )
 ////	local-part@domain
 ////	https://www.linkedin.com/in/karlbertin
 ////	https://twitter.com/kvpb777
+////	https://github.com/kvpb
 ////	https://www.instagram.com/add/karlbertin
 ////	https://vm.tiktok.com/ZSwAmcFh/
 ////
-////		#include <stdarg.h>
-////		#include <stdio.h>
-////		
-////		double average(int count, ...) {
-////		    va_list ap;
-////		    int j;
-////		    double sum = 0;
-////	
-////		    va_start(ap, count); / Requires the last fixed parameter (to get the address) /
-////		    for (j = 0; j < count; j++) {
-////		        sum += va_arg(ap, int); / Increments ap to the next argument. /
-////		    }
-////		    va_end(ap);
-////		
-////		    return sum / count;
-////		}
-////		
-////		int main(int argc, char const *argv[]) {
-////		    printf("%f\n", average(3, 1, 2, 3));
-////		    return 0;
-////		}
-*///		// https://en.wikipedia.org/wiki/Variadic_function#In_C
+////	https://en.wikipedia.org/wiki/Greatest_common_divisor
+////	https://en.wikipedia.org/wiki/Euclidean_algorithm
+////	https://en.wikipedia.org/wiki/Euclidean_division
+////	https://en.wikipedia.org/wiki/Least_common_multiple
+*///	https://en.wikipedia.org/wiki/Variadic_function#In_C
