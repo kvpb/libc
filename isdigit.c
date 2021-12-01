@@ -28,7 +28,7 @@
 
 //#include <stdio.h> //	debug code
 
-int isdigit(char c)
+int isdigit(int c)
 {
 	return ( ( 48 <= c && c <= 57 ) ? 1 : 0 ); //return ( ( isalnum(c) && !isalpha(c) ) ? 1 : 0 );
 }
@@ -39,8 +39,23 @@ int isdigit(char c)
 	char c_65 = 'A';
 	char c_97 = 'a';
 
-	printf("0\t%d\n", isdigit(c_48));
-	printf("A\t%d\n", isdigit(c_65));
-	printf("a\t%d\n", isdigit(c_97));
+	printf("0\t%d\n", isdigit((int) c_48));
+	printf("A\t%d\n", isdigit((int) c_65));
+	printf("a\t%d\n", isdigit((int) c_97));
 	return 0;
 }*/ //	debug code
+
+/*//	isdigit.c
+		IsDigit
+
+		Karl V. P. Bertin `kvpb`
+		+1 (DDD) DDD-DDDD
+		+33 A BB BB BB BB
+		local-part@domain
+		https://www.linkedin.com/in/karlbertin
+		https://twitter.com/kvpb777
+		https://github.com/kvpb
+		https://www.instagram.com/add/karlbertin
+		https://vm.tiktok.com/ZSwAmcFh/
+
+*///	The IsDigit function tests for a decimal digit character. This only includes the characters 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9 regardless of locale.

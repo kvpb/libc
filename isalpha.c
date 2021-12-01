@@ -28,7 +28,7 @@
 
 //#include <stdio.h> //	debug code
 
-int isalpha(char c)
+int isalpha(int c)
 {
 	return ( ( ( 65 <= c && c <= 90 ) || ( 97 <= c && c <= 122 ) ) ? 1 : 0 ); //return ( ( isalnum(c) && !isdigit(c) ) ? 1 : 0 );
 }
@@ -39,8 +39,23 @@ int isalpha(char c)
 	char c_65 = 'A';
 	char c_97 = 'a';
 
-	printf("0\t%d\n", isalpha(c_48));
-	printf("A\t%d\n", isalpha(c_65));
-	printf("a\t%d\n", isalpha(c_97));
+	printf("0\t%d\n", isalpha((int) c_48));
+	printf("A\t%d\n", isalpha((int) c_65));
+	printf("a\t%d\n", isalpha((int) c_97));
 	return 0;
 }*/ //	debug code
+
+/*//	isalpha.c
+		IsAlpha
+
+		Karl V. P. Bertin `kvpb`
+		+1 (DDD) DDD-DDDD
+		+33 A BB BB BB BB
+		local-part@domain
+		https://www.linkedin.com/in/karlbertin
+		https://twitter.com/kvpb777
+		https://github.com/kvpb
+		https://www.instagram.com/add/karlbertin
+		https://vm.tiktok.com/ZSwAmcFh/
+
+*///	The IsAlpha function tests for any upper- or lower-case letter. This includes the characters 101 to 132 and 141 to 172 in octal in the ASCII character set.

@@ -28,7 +28,7 @@
 
 //#include <stdio.h> //	debug code
 
-int islower(char c)
+int islower(int c)
 {
 	return ( ( 97 <= c && c <= 122 ) ? 1 : 0 ); //return ( ( isalpha(c) && !isupper(c) ) ? 1 : 0 );
 }
@@ -38,7 +38,22 @@ int islower(char c)
 	char c_65 = 'A';
 	char c_97 = 'a';
 
-	printf("A\t%d\n", islower(c_65));
-	printf("a\t%d\n", islower(c_97));
+	printf("A\t%d\n", islower((int) c_65));
+	printf("a\t%d\n", islower((int) c_97));
 	return 0;
 }*/ //	debug code
+
+/*//	islower.c
+		IsLower
+
+		Karl V. P. Bertin `kvpb`
+		+1 (DDD) DDD-DDDD
+		+33 A BB BB BB BB
+		local-part@domain
+		https://www.linkedin.com/in/karlbertin
+		https://twitter.com/kvpb777
+		https://github.com/kvpb
+		https://www.instagram.com/add/karlbertin
+		https://vm.tiktok.com/ZSwAmcFh/
+
+*///	The IsLower function tests for any lower-case letter. This includes the characters 141 to 172 in octal in the ASCII character set.
