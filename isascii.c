@@ -28,7 +28,7 @@
 
 //#include <stdio.h> //	debug code
 
-int isascii(char c)
+int isascii(int c)
 {
 	/*return ( ( 
 				isalnum(c) || isalpha(c) || isupper(c) || islower(c) 
@@ -168,148 +168,149 @@ int isascii(char c)
 	char c_125 = '}';
 	char c_126 = '~';
 	char c_127 = 127;
-	//char c_255 = '';
 
-	printf("NUL\t%d\n", isascii(c_0)); //printf("%d\n", is(c_));
-	printf("SOH\t%d\n", isascii(c_1));
-	printf("STX\t%d\n", isascii(c_2));
-	printf("ETX\t%d\n", isascii(c_3));
-	printf("EOT\t%d\n", isascii(c_4));
-	printf("ENQ\t%d\n", isascii(c_5));
-	printf("ACK\t%d\n", isascii(c_6));
-	printf("BEL\t%d\n", isascii(c_7));
-	printf("BS\t%d\n", isascii(c_8));
-	printf("HT\t%d\n", isascii(c_9));
-	printf("NL\t%d\n", isascii(c_10));
-	printf("VT\t%d\n", isascii(c_11));
-	printf("NP\t%d\n", isascii(c_12));
-	printf("CR\t%d\n", isascii(c_13));
-	printf("SO\t%d\n", isascii(c_14));
-	printf("SI\t%d\n", isascii(c_15));
-	printf("DLE\t%d\n", isascii(c_16));
-	printf("DC1\t%d\n", isascii(c_17));
-	printf("DC2\t%d\n", isascii(c_18));
-	printf("DC3\t%d\n", isascii(c_19));
-	printf("DC4\t%d\n", isascii(c_20));
-	printf("NAK\t%d\n", isascii(c_21));
-	printf("SYN\t%d\n", isascii(c_22));
-	printf("ETB\t%d\n", isascii(c_23));
-	printf("CAN\t%d\n", isascii(c_24));
-	printf("EM\t%d\n", isascii(c_25));
-	printf("SUB\t%d\n", isascii(c_26));
-	printf("ESC\t%d\n", isascii(c_27));
-	printf("FS\t%d\n", isascii(c_28));
-	printf("GS\t%d\n", isascii(c_29));
-	printf("RS\t%d\n", isascii(c_30));
-	printf("US\t%d\n", isascii(c_31));
-	printf("SP\t%d\n", isascii(c_32));
-	printf("!\t%d\n", isascii(c_33));
-	printf("\"\t%d\n", isascii(c_34));
-	printf("#\t%d\n", isascii(c_35));
-	printf("$\t%d\n", isascii(c_36));
-	printf("%%\t%d\n", isascii(c_37));
-	printf("&\t%d\n", isascii(c_38));
-	printf("'\t%d\n", isascii(c_39));
-	printf("\(\t%d\n", isascii(c_40));
-	printf(")\t%d\n", isascii(c_41));
-	printf("*\t%d\n", isascii(c_42));
-	printf("+\t%d\n", isascii(c_43));
-	printf(",\t%d\n", isascii(c_44));
-	printf("-\t%d\n", isascii(c_45));
-	printf(".\t%d\n", isascii(c_46));
-	printf("/\t%d\n", isascii(c_47));
-	printf("0\t%d\n", isascii(c_48));
-	printf("1\t%d\n", isascii(c_49));
-	printf("2\t%d\n", isascii(c_50));
-	printf("3\t%d\n", isascii(c_51));
-	printf("4\t%d\n", isascii(c_52));
-	printf("5\t%d\n", isascii(c_53));
-	printf("6\t%d\n", isascii(c_54));
-	printf("7\t%d\n", isascii(c_55));
-	printf("8\t%d\n", isascii(c_56));
-	printf("9\t%d\n", isascii(c_57));
-	printf(":\t%d\n", isascii(c_58));
-	printf(";\t%d\n", isascii(c_59));
-	printf("<\t%d\n", isascii(c_60));
-	printf("=\t%d\n", isascii(c_61));
-	printf(">\t%d\n", isascii(c_62));
-	printf("?\t%d\n", isascii(c_63));
-	printf("@\t%d\n", isascii(c_64));
-	printf("A\t%d\n", isascii(c_65));
-	printf("B\t%d\n", isascii(c_66));
-	printf("C\t%d\n", isascii(c_67));
-	printf("D\t%d\n", isascii(c_68));
-	printf("E\t%d\n", isascii(c_69));
-	printf("F\t%d\n", isascii(c_70));
-	printf("G\t%d\n", isascii(c_71));
-	printf("H\t%d\n", isascii(c_72));
-	printf("I\t%d\n", isascii(c_73));
-	printf("J\t%d\n", isascii(c_74));
-	printf("K\t%d\n", isascii(c_75));
-	printf("L\t%d\n", isascii(c_76));
-	printf("M\t%d\n", isascii(c_77));
-	printf("N\t%d\n", isascii(c_78));
-	printf("O\t%d\n", isascii(c_79));
-	printf("P\t%d\n", isascii(c_80));
-	printf("Q\t%d\n", isascii(c_81));
-	printf("R\t%d\n", isascii(c_82));
-	printf("S\t%d\n", isascii(c_83));
-	printf("T\t%d\n", isascii(c_84));
-	printf("U\t%d\n", isascii(c_85));
-	printf("V\t%d\n", isascii(c_86));
-	printf("W\t%d\n", isascii(c_87));
-	printf("X\t%d\n", isascii(c_88));
-	printf("Y\t%d\n", isascii(c_89));
-	printf("Z\t%d\n", isascii(c_90));
-	printf("[\t%d\n", isascii(c_91));
-	printf("\\\t%d\n", isascii(c_92));
-	printf("]\t%d\n", isascii(c_93));
-	printf("^\t%d\n", isascii(c_94));
-	printf("_\t%d\n", isascii(c_95));
-	printf("`\t%d\n", isascii(c_96));
-	printf("a\t%d\n", isascii(c_97));
-	printf("b\t%d\n", isascii(c_98));
-	printf("c\t%d\n", isascii(c_99));
-	printf("d\t%d\n", isascii(c_100));
-	printf("e\t%d\n", isascii(c_101));
-	printf("f\t%d\n", isascii(c_102));
-	printf("g\t%d\n", isascii(c_103));
-	printf("h\t%d\n", isascii(c_104));
-	printf("i\t%d\n", isascii(c_105));
-	printf("j\t%d\n", isascii(c_106));
-	printf("k\t%d\n", isascii(c_107));
-	printf("l\t%d\n", isascii(c_108));
-	printf("m\t%d\n", isascii(c_109));
-	printf("n\t%d\n", isascii(c_110));
-	printf("o\t%d\n", isascii(c_111));
-	printf("p\t%d\n", isascii(c_112));
-	printf("q\t%d\n", isascii(c_113));
-	printf("r\t%d\n", isascii(c_114));
-	printf("s\t%d\n", isascii(c_115));
-	printf("t\t%d\n", isascii(c_116));
-	printf("u\t%d\n", isascii(c_117));
-	printf("v\t%d\n", isascii(c_118));
-	printf("w\t%d\n", isascii(c_119));
-	printf("x\t%d\n", isascii(c_120));
-	printf("y\t%d\n", isascii(c_121));
-	printf("z\t%d\n", isascii(c_122));
-	printf("{\t%d\n", isascii(c_123));
-	printf("|\t%d\n", isascii(c_124));
-	printf("}\t%d\n", isascii(c_125));
-	printf("~\t%d\n", isascii(c_126));
-	printf("DEL\t%d\n", isascii(c_127));
-	//printf("\t%d\n", isascii(c_255));
+	printf("NUL\t%d\n", isascii((int) c_0)); //printf("%d\n", is((int) c_));
+	printf("SOH\t%d\n", isascii((int) c_1));
+	printf("STX\t%d\n", isascii((int) c_2));
+	printf("ETX\t%d\n", isascii((int) c_3));
+	printf("EOT\t%d\n", isascii((int) c_4));
+	printf("ENQ\t%d\n", isascii((int) c_5));
+	printf("ACK\t%d\n", isascii((int) c_6));
+	printf("BEL\t%d\n", isascii((int) c_7));
+	printf("BS\t%d\n", isascii((int) c_8));
+	printf("HT\t%d\n", isascii((int) c_9));
+	printf("NL\t%d\n", isascii((int) c_10));
+	printf("VT\t%d\n", isascii((int) c_11));
+	printf("NP\t%d\n", isascii((int) c_12));
+	printf("CR\t%d\n", isascii((int) c_13));
+	printf("SO\t%d\n", isascii((int) c_14));
+	printf("SI\t%d\n", isascii((int) c_15));
+	printf("DLE\t%d\n", isascii((int) c_16));
+	printf("DC1\t%d\n", isascii((int) c_17));
+	printf("DC2\t%d\n", isascii((int) c_18));
+	printf("DC3\t%d\n", isascii((int) c_19));
+	printf("DC4\t%d\n", isascii((int) c_20));
+	printf("NAK\t%d\n", isascii((int) c_21));
+	printf("SYN\t%d\n", isascii((int) c_22));
+	printf("ETB\t%d\n", isascii((int) c_23));
+	printf("CAN\t%d\n", isascii((int) c_24));
+	printf("EM\t%d\n", isascii((int) c_25));
+	printf("SUB\t%d\n", isascii((int) c_26));
+	printf("ESC\t%d\n", isascii((int) c_27));
+	printf("FS\t%d\n", isascii((int) c_28));
+	printf("GS\t%d\n", isascii((int) c_29));
+	printf("RS\t%d\n", isascii((int) c_30));
+	printf("US\t%d\n", isascii((int) c_31));
+	printf("SP\t%d\n", isascii((int) c_32));
+	printf("!\t%d\n", isascii((int) c_33));
+	printf("\"\t%d\n", isascii((int) c_34));
+	printf("#\t%d\n", isascii((int) c_35));
+	printf("$\t%d\n", isascii((int) c_36));
+	printf("%%\t%d\n", isascii((int) c_37));
+	printf("&\t%d\n", isascii((int) c_38));
+	printf("'\t%d\n", isascii((int) c_39));
+	printf("\(\t%d\n", isascii((int) c_40));
+	printf(")\t%d\n", isascii((int) c_41));
+	printf("*\t%d\n", isascii((int) c_42));
+	printf("+\t%d\n", isascii((int) c_43));
+	printf(",\t%d\n", isascii((int) c_44));
+	printf("-\t%d\n", isascii((int) c_45));
+	printf(".\t%d\n", isascii((int) c_46));
+	printf("/\t%d\n", isascii((int) c_47));
+	printf("0\t%d\n", isascii((int) c_48));
+	printf("1\t%d\n", isascii((int) c_49));
+	printf("2\t%d\n", isascii((int) c_50));
+	printf("3\t%d\n", isascii((int) c_51));
+	printf("4\t%d\n", isascii((int) c_52));
+	printf("5\t%d\n", isascii((int) c_53));
+	printf("6\t%d\n", isascii((int) c_54));
+	printf("7\t%d\n", isascii((int) c_55));
+	printf("8\t%d\n", isascii((int) c_56));
+	printf("9\t%d\n", isascii((int) c_57));
+	printf(":\t%d\n", isascii((int) c_58));
+	printf(";\t%d\n", isascii((int) c_59));
+	printf("<\t%d\n", isascii((int) c_60));
+	printf("=\t%d\n", isascii((int) c_61));
+	printf(">\t%d\n", isascii((int) c_62));
+	printf("?\t%d\n", isascii((int) c_63));
+	printf("@\t%d\n", isascii((int) c_64));
+	printf("A\t%d\n", isascii((int) c_65));
+	printf("B\t%d\n", isascii((int) c_66));
+	printf("C\t%d\n", isascii((int) c_67));
+	printf("D\t%d\n", isascii((int) c_68));
+	printf("E\t%d\n", isascii((int) c_69));
+	printf("F\t%d\n", isascii((int) c_70));
+	printf("G\t%d\n", isascii((int) c_71));
+	printf("H\t%d\n", isascii((int) c_72));
+	printf("I\t%d\n", isascii((int) c_73));
+	printf("J\t%d\n", isascii((int) c_74));
+	printf("K\t%d\n", isascii((int) c_75));
+	printf("L\t%d\n", isascii((int) c_76));
+	printf("M\t%d\n", isascii((int) c_77));
+	printf("N\t%d\n", isascii((int) c_78));
+	printf("O\t%d\n", isascii((int) c_79));
+	printf("P\t%d\n", isascii((int) c_80));
+	printf("Q\t%d\n", isascii((int) c_81));
+	printf("R\t%d\n", isascii((int) c_82));
+	printf("S\t%d\n", isascii((int) c_83));
+	printf("T\t%d\n", isascii((int) c_84));
+	printf("U\t%d\n", isascii((int) c_85));
+	printf("V\t%d\n", isascii((int) c_86));
+	printf("W\t%d\n", isascii((int) c_87));
+	printf("X\t%d\n", isascii((int) c_88));
+	printf("Y\t%d\n", isascii((int) c_89));
+	printf("Z\t%d\n", isascii((int) c_90));
+	printf("[\t%d\n", isascii((int) c_91));
+	printf("\\\t%d\n", isascii((int) c_92));
+	printf("]\t%d\n", isascii((int) c_93));
+	printf("^\t%d\n", isascii((int) c_94));
+	printf("_\t%d\n", isascii((int) c_95));
+	printf("`\t%d\n", isascii((int) c_96));
+	printf("a\t%d\n", isascii((int) c_97));
+	printf("b\t%d\n", isascii((int) c_98));
+	printf("c\t%d\n", isascii((int) c_99));
+	printf("d\t%d\n", isascii((int) c_100));
+	printf("e\t%d\n", isascii((int) c_101));
+	printf("f\t%d\n", isascii((int) c_102));
+	printf("g\t%d\n", isascii((int) c_103));
+	printf("h\t%d\n", isascii((int) c_104));
+	printf("i\t%d\n", isascii((int) c_105));
+	printf("j\t%d\n", isascii((int) c_106));
+	printf("k\t%d\n", isascii((int) c_107));
+	printf("l\t%d\n", isascii((int) c_108));
+	printf("m\t%d\n", isascii((int) c_109));
+	printf("n\t%d\n", isascii((int) c_110));
+	printf("o\t%d\n", isascii((int) c_111));
+	printf("p\t%d\n", isascii((int) c_112));
+	printf("q\t%d\n", isascii((int) c_113));
+	printf("r\t%d\n", isascii((int) c_114));
+	printf("s\t%d\n", isascii((int) c_115));
+	printf("t\t%d\n", isascii((int) c_116));
+	printf("u\t%d\n", isascii((int) c_117));
+	printf("v\t%d\n", isascii((int) c_118));
+	printf("w\t%d\n", isascii((int) c_119));
+	printf("x\t%d\n", isascii((int) c_120));
+	printf("y\t%d\n", isascii((int) c_121));
+	printf("z\t%d\n", isascii((int) c_122));
+	printf("{\t%d\n", isascii((int) c_123));
+	printf("|\t%d\n", isascii((int) c_124));
+	printf("}\t%d\n", isascii((int) c_125));
+	printf("~\t%d\n", isascii((int) c_126));
+	printf("DEL\t%d\n", isascii((int) c_127));
 	return 0;
 }*/ //	debug code
 
-/*		isascii.c
+/*//	isascii.c
 		IsASCII
 
 		Karl V. P. Bertin `kvpb`
 		+1 (DDD) DDD-DDDD
+		+33 A BB BB BB BB
 		local-part@domain
 		https://www.linkedin.com/in/karlbertin
+		https://twitter.com/kvpb777
+		https://github.com/kvpb
 		https://www.instagram.com/add/karlbertin
 		https://vm.tiktok.com/ZSwAmcFh/
 
-*///	The ISASCII function tests for an ASCII character, which is any character between 0 and octal 0177 inclusive.
+*///	The ISASCII function tests for an ASCII character. An ASCII character is any character between 0 and octal 0177 inclusive.

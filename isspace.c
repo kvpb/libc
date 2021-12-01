@@ -28,7 +28,7 @@
 
 //#include <stdio.h> //	debug code
 
-int isspace(char c)
+int isspace(int c)
 {
 	return ( ( ( 9 <= c && c <= 13 ) || ( c == 32 ) ) ? 1 : 0 );
 }
@@ -44,13 +44,28 @@ int isspace(char c)
 	char c_32 = ' ';
 	char c_48 = '0';
 
-	printf("NUL\t%d\n", isspace(c_0));
-	printf("HT\t%d\n", isspace(c_9));
-	printf("NL\t%d\n", isspace(c_10));
-	printf("VT\t%d\n", isspace(c_11));
-	printf("NP\t%d\n", isspace(c_12));
-	printf("CR\t%d\n", isspace(c_13));
-	printf("SP\t%d\n", isspace(c_32));
-	printf("0\t%d\n", isspace(c_48));
+	printf("NUL\t%d\n", isspace((int) c_0));
+	printf("HT\t%d\n", isspace((int) c_9));
+	printf("NL\t%d\n", isspace((int) c_10));
+	printf("VT\t%d\n", isspace((int) c_11));
+	printf("NP\t%d\n", isspace((int) c_12));
+	printf("CR\t%d\n", isspace((int) c_13));
+	printf("SP\t%d\n", isspace((int) c_32));
+	printf("0\t%d\n", isspace((int) c_48));
 	return 0;
 }*/ //	debug code
+
+/*//	isspace.c
+		IsSpace
+
+		Karl V. P. Bertin `kvpb`
+		+1 (DDD) DDD-DDDD
+		+33 A BB BB BB BB
+		local-part@domain
+		https://www.linkedin.com/in/karlbertin
+		https://twitter.com/kvpb777
+		https://github.com/kvpb
+		https://www.instagram.com/add/karlbertin
+		https://vm.tiktok.com/ZSwAmcFh/
+
+*///	The IsSpace function tests for the white-space characters. This includes the standard characters '\t', '\n', '\v', '\f', '\r' and ' '.
